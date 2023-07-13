@@ -17,7 +17,8 @@ body {
 h1 {
   text-align: center;
   color: red;
-  margin: 20px 0; 
+  margin: 20px 0;
+  -webkit-text-stroke: 1px white;
 }
 
 #center-container {
@@ -34,4 +35,8 @@ h1 {
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
+}
+
+#octoButton {
+  margin-top: 10px;
 }
