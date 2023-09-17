@@ -7,20 +7,19 @@
     <link rel="stylesheet" href="main.css"/>
 </head>
 <body>
-    <div id="main">
-        <div id="title">
-            <h1>OctoVault</h1>
+
+    <main>
+        <div class="title">OctoVault</div>
+
+        <div class="input-section">
+            <form class="main-form">
+                <input type="text" id="user_input_main" name="octo_input" required minlength="1" maxlength="40" size="70" placeholder="Enter a fighter's name or an event's name (e.g., Conor McGregor or UFC 264)">
+                <input type="submit" value="Press to search the OctoVault!" id="submit-button">
+            </form>
         </div>
-        
-        <div id="octoTextField">
-            <input type="text" id="userin" name="userinput" required
-            minlength="1" maxlength="40" size="70" placeholder="Enter a fighter's name or an event's name (e.g., Conor McGregor or UFC 264)">
-        </div>
-        <div id="octoButton">
-            <button type="button">
-                Press to Search the OctoVault!
-            </button>
-        </div>
-    </div>
+
+
+
+    </main>
 </body>
 </html>
