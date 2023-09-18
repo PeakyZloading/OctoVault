@@ -6,11 +6,18 @@
 }
 
 .title{
-  font-size: 70px;
+  font-size: 100px;
   text-align: center;
   font-family: myFirstFont;
   color: #c5000c;
   margin-top: 20px;
+}
+
+.main-greeting{
+  font-size: 25px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  margin-top: 140px;
 }
 
 .input-section{
@@ -18,7 +25,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 65vh;
+  min-height: 35vh;
 }
 
 #user_input_main{
