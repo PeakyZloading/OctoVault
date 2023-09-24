@@ -50,7 +50,7 @@
     transition: opacity 0.2s;
 }
 
-@font-face {
+@font-face{
     font-family: myFirstFont;
     src: url(../static/Sternbach_Bold_Italic.otf);
-  }
+}

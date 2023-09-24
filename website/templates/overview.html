@@ -4,8 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overview</title>
+    <link rel="stylesheet" href="../static/overstyle.css"/>
 </head>
 <body>
-    <h1>Test</h1>
+    <div class="fighter-name">{{ fighter_name }}</div>
+    <div class="w-l-d-record">Record: {{ wins }} - {{ loss }} - {{ no_contest }}</div>
+        <!-- Previous Fights Table -->
+    <h2>Previous Fights</h2>
+    <table class="previous-fights-table">
+        <thead>
+            <tr>
+            <th>Date</th>
+            <th>Opponent</th>
+            <th>Result</th>
+            <!-- Add more table headers as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for fight in previous_fights %}
+            <tr>
+                <td>{{ fight.date }}</td>
+                <td>{{ fight.opponent }}</td>
+                <td>{{ fight.result }}</td>
+                <!-- Add more table data columns as needed -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
 </body>
 </html>

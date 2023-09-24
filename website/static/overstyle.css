@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #27374D;
+}
+
+.fighter-name{
+    font-size: 100px;
+    text-align: center;
+    font-family: myFirstFont;
+    color: #c5000c;
+    margin-top: 20px;
+}
+
+.w-l-d-record{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 40px;
+}
+
+
+@font-face{
+    font-family: myFirstFont;
+    src: url(../static/Sternbach_Bold_Italic.otf);
+}
