@@ -7,8 +7,30 @@
     <link rel="stylesheet" href="../static/overstyle.css"/>
 </head>
 <body>
+    
+    
     <div class="fighter-name">{{ fighter_name }}</div>
-    <div class="w-l-d-record">Record: {{ wins }} - {{ loss }} - {{ draws }}</div>
+    {% if fighter_nickname %}
+    <div class="fighter-nickname">"{{ fighter_nickname }}"</div>
+    {% endif %}
+    <div class="w-l-d-record"><span class="inner-label">Record: </span><span class="win">{{ wins }}</span> - <span class="loss">{{ losses }}</span> - <span class="draw">{{ draws }}</span></div>
+    <!-- Display Fighter physical info -->
+    <div class="fighter-stats-container">
+        
+        {% if height %}
+            <div class="height fighter-stats"><span class="inner-label">Height: </span>{{ height }}"</div>
+        {% endif %}
+        {% if weight %}
+            <div class="weight fighter-stats"><span class="inner-label">Weight: </span>{{ weight }} lbs</div>
+        {% endif %}
+        {% if reach %}
+            <div class="reach fighter-stats"><span class="inner-label">Reach: </span>{{ reach }}"</div>
+        {% endif %}
+        {% if stance %}
+            <div class="stance fighter-stats"><span class="inner-label">Stance: </span>{{ stance }}</div>
+        {% endif %}
+    </div>
+    
     <!-- Previous Fights Table -->
     <h2 class="table-label">Previous Fights</h2>
     <table class="previous-fights-table">

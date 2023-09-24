@@ -13,9 +13,24 @@
     margin-top: 20px;
 }
 
-.w-l-d-record{
-    text-align: center;
+.fighter-stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.fighter-stats{
+    color: rgb(214, 159, 49);
     font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-right: 20px;
+}
+
+.w-l-d-record{
+    color: white;
+    text-align: center;
+    font-size: 40px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-top: 40px;
 }
@@ -27,6 +42,30 @@
 
 .previous-fights-table{
     margin: 0 auto;
+}
+
+.fighter-nickname{
+    color: #c5000c;
+    text-align: center;
+    font-size: 75px;
+    font-family: myFirstFont;
+    margin-top: 10px;
+}
+
+.inner-label{
+    color: #c5000c;
+}
+
+.win{
+    color: #080;
+}
+
+.loss{
+    color: #c70300;
+}
+
+.draw{
+    color: #7faefd;
 }
 
 
