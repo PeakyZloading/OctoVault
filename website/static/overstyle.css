@@ -20,6 +20,15 @@
     margin-top: 40px;
 }
 
+.table-label{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.previous-fights-table{
+    margin: 0 auto;
+}
+
 
 @font-face{
     font-family: myFirstFont;
