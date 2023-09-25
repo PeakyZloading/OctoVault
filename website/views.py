@@ -12,22 +12,31 @@ def home():
 def overview():
     fighter_name = request.args.get('octo_input')
 
-    # Determine the full path to the desktop directory
+    #Determine the full path to the desktop directory
     desktop_path = os.path.expanduser("~/Desktop")
     db_file_path = os.path.join(desktop_path, "octovaultdb")
 
-    # Establish a connection to the SQLite database using the full path
+    #Establish a connection to the SQLite database using the full path
     conn = sqlite3.connect(db_file_path)
     cursor = conn.cursor()
 
-    query = "SELECT * FROM fighters WHERE LOWER(first_name) = ? AND LOWER(last_name) = ?"
+    #Query to retrive basic fighter info from the database
+    fighter_info_query = "SELECT * FROM fighters WHERE LOWER(first_name) = ? AND LOWER(last_name) = ?"
     first_name, last_name = fighter_name.split()
     first_name = first_name.lower()
     last_name = last_name.lower()
-    params = (first_name, last_name)
+    fighter_params = (first_name, last_name)
 
-    cursor.execute(query, params)
+    cursor.execute(fighter_info_query, fighter_params)
     fighter_info = cursor.fetchall()
+
+    #Query to retrieve fights the fighter has taken place in
+    fights_query = "SELECT * FROM fights WHERE LOWER(fighter1) = ? OR LOWER(fighter2) = ?"
+    fights_params = (fighter_name.lower(), fighter_name.lower())
+    cursor.execute(fights_query, fights_params)
+    fighter_fights = cursor.fetchall()
+    #Test and view structure of fight tuples
+    print(fighter_fights)
 
     cursor.close()
     conn.close()
