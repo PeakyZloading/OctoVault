@@ -35,8 +35,9 @@ def overview():
     fights_params = (fighter_name.lower(), fighter_name.lower())
     cursor.execute(fights_query, fights_params)
     fighter_fights = cursor.fetchall()
+
     #Test and view structure of fight tuples
-    print(fighter_fights)
+    #print(fighter_fights)
 
     cursor.close()
     conn.close()
@@ -53,6 +54,7 @@ def overview():
             'weight': fighter_info[0][4],
             'reach': fighter_info[0][5],
             'stance': fighter_info[0][6],
+            'previous_fights': fighter_fights
         }
     else:
         #Handle the case where the fighter is not found

@@ -38,7 +38,7 @@
             <tr>
             <th>Date</th>
             <th>Opponent</th>
-            <th>Result</th>
+            <th>Winner</th>
             <th>Method</th>
             <th>Weight Class</th>
             <!-- Add more table headers as needed -->
@@ -47,11 +47,17 @@
         <tbody>
             {% for fight in previous_fights %}
             <tr>
-                <td>{{ fight.date }}</td>
-                <td>{{ fight.opponent }}</td>
-                <td>{{ fight.result }}</td>
-                <td>{{ fight.method }}</td>
-                <td>{{ fight.weight }}</td>
+                <!-- 3,4 -->
+                <td>{{ fight[1] }}</td>
+                {% if fight[3].lower() == fighter_name.lower() %}
+                    <td>{{ fight[4] }}</td>
+                {% else %}
+                    <td>{{ fight[3] }}</td>
+                {% endif %}
+                
+                <td>{{ fight[2] }}</td>
+                <td>{{ fight[10] }}</td>
+                <td>{{ fight[9] }}</td>
                 <!-- Add more table data columns as needed -->
             </tr>
             {% endfor %}
