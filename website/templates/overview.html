@@ -48,16 +48,16 @@
             {% for fight in previous_fights %}
             <tr>
                 <!-- 3,4 -->
-                <td>{{ fight[1] }}</td>
+                <td class="table-entry">{{ fight[1] }}</td>
                 {% if fight[3].lower() == fighter_name.lower() %}
-                    <td>{{ fight[4] }}</td>
+                    <td class="table-entry">{{ fight[4] }}</td>
                 {% else %}
-                    <td>{{ fight[3] }}</td>
+                    <td class="table-entry">{{ fight[3] }}</td>
                 {% endif %}
                 
-                <td>{{ fight[2] }}</td>
-                <td>{{ fight[10] }}</td>
-                <td>{{ fight[9] }}</td>
+                <td class="table-entry">{{ fight[2] }}</td>
+                <td class="table-entry">{{ fight[10] }}</td>
+                <td class="table-entry">{{ fight[9] }}</td>
                 <!-- Add more table data columns as needed -->
             </tr>
             {% endfor %}

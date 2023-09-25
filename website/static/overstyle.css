@@ -36,13 +36,37 @@
 }
 
 .table-label{
+    font-size: 40px;
+    font-family: myFirstFont;
     text-align: center;
+    color: #c5000c;
     margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+th{
+    color: #e88828;
+    
 }
 
 .previous-fights-table{
     margin: 0 auto;
+    margin-bottom: 20px;
 }
+
+.previous-fights-table > tbody > tr >td {
+    height: 50px;
+    width: 200px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+
+
+
+
 
 .fighter-nickname{
     color: #c5000c;
@@ -67,7 +91,6 @@
 .draw{
     color: #7faefd;
 }
-
 
 @font-face{
     font-family: myFirstFont;
