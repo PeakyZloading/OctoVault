@@ -8,7 +8,7 @@ body{
     background-color: #27374D;
 }
 
-.fighter-name{
+.fighter-name, .event-name{
     font-size: 100px;
     text-align: center;
     font-family: myFirstFont;
@@ -51,16 +51,15 @@ body{
     margin-bottom: 30px;
 }
 
-.previous-fights-table{
+.previous-fights-table, .fight-details-table{
     border-collapse: collapse;
     margin: auto;
     max-width: 90%;
     font-size: 0.9em;
-    
     margin-bottom: 30px;
 }
 
-.previous-fights-table thead tr{
+.previous-fights-table thead tr, .fight-details-table thead tr{
     background-color: #c5000c;
     color: #ffffff;
     font-family: myFirstFont;
@@ -70,21 +69,21 @@ body{
     font-weight: bold;
 }
 
-.previous-fights-table th, .previous-fights-table td{
+.previous-fights-table th, .previous-fights-table td, .fight-details-table th, .fight-details-table td{
     padding: 12px 35px;
     font-size: 25px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
-.previous-fights-table tbody tr{
+.previous-fights-table tbody tr, .fight-details-table tbody tr{
     border-bottom: 1px solid #dddddd;
 }
 
-.previous-fights-table tbody tr{
+.previous-fights-table tbody tr, .fight-details-table tbody tr{
     background-color: #f3f3f3;
 }
 
-.fighter-nickname{
+.fighter-nickname, .event-date{
     color: #c5000c;
     text-align: center;
     font-size: 75px;
