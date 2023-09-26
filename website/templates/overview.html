@@ -55,7 +55,14 @@
                     <td>{{ fight[3] }}</td>
                 {% endif %}
                 
-                <td>{{ fight[2] }}</td>
+                {% if fight[2].lower() == fighter_name.lower()%}
+                    <td style="color: green;">{{ fight[2] }}</td>
+                {% else %}
+                    <td style="color: red;">{{ fight[2] }}</td>
+                {% endif %}
+
+
+
                 <td>{{ fight[10] }}</td>
                 <td>{{ fight[9] }}</td>
                 <!-- Add more table data columns as needed -->
