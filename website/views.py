@@ -55,9 +55,14 @@ def overview():
 
     #Query to retrive basic fighter info from the database
     fighter_info_query = "SELECT * FROM fighters WHERE LOWER(first_name) = ? AND LOWER(last_name) = ?"
-    first_name, last_name = fighter_name.split()
-    first_name = first_name.lower()
-    last_name = last_name.lower()
+    split_name = fighter_name.split()
+    if len(split_name) > 1:
+        first_name = split_name[0].lower()
+        last_name = " ".join(split_name[1:]).lower()
+    else:
+        first_name = split_name[0].lower()
+        last_name = split_name[1].lower()
+    
     fighter_params = (first_name, last_name)
 
     cursor.execute(fighter_info_query, fighter_params)
