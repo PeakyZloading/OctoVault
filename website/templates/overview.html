@@ -36,11 +36,11 @@
     <table class="previous-fights-table">
         <thead>
             <tr>
-            <th>Date</th>
-            <th>Opponent</th>
-            <th>Winner</th>
-            <th>Method</th>
-            <th>Weight Class</th>
+            <th style="font-family: myFirstFont; font-size: 32px;">Date</th>
+            <th style="font-family: myFirstFont; font-size: 32px;">Opponent</th>
+            <th style="font-family: myFirstFont; font-size: 32px;">Winner</th>
+            <th style="font-family: myFirstFont; font-size: 32px;">Method</th>
+            <th style="font-family: myFirstFont; font-size: 32px;">Weight Class</th>
             <!-- Add more table headers as needed -->
             </tr>
         </thead>
@@ -48,16 +48,16 @@
             {% for fight in previous_fights %}
             <tr>
                 <!-- 3,4 -->
-                <td class="table-entry">{{ fight[1] }}</td>
+                <td>{{ fight[1] }}</td>
                 {% if fight[3].lower() == fighter_name.lower() %}
-                    <td class="table-entry">{{ fight[4] }}</td>
+                    <td>{{ fight[4] }}</td>
                 {% else %}
-                    <td class="table-entry">{{ fight[3] }}</td>
+                    <td>{{ fight[3] }}</td>
                 {% endif %}
                 
-                <td class="table-entry">{{ fight[2] }}</td>
-                <td class="table-entry">{{ fight[10] }}</td>
-                <td class="table-entry">{{ fight[9] }}</td>
+                <td>{{ fight[2] }}</td>
+                <td>{{ fight[10] }}</td>
+                <td>{{ fight[9] }}</td>
                 <!-- Add more table data columns as needed -->
             </tr>
             {% endfor %}

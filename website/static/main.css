@@ -10,12 +10,14 @@
     text-align: center;
     font-family: myFirstFont;
     color: #c5000c;
+    -webkit-text-stroke: 1px black;
     margin-top: 20px;
 }
   
 .main-greeting{
-    font-size: 25px;
+    font-size: 45px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
     text-align: center;
     margin-top: 140px;
 }
