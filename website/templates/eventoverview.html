@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Overview</title>
+    <!-- <link rel="stylesheet" href="../static/overstyle.css"/> -->
+</head>
+<body>
+    <!-- Event Name -->
+    <h1 class="event-name">{{ event_name }}</h1>
+
+    <!-- Event Date -->
+    <div class="event-date">{{ event_date }}</div>
+
+    <!-- Fight Details -->
+    <h2 class="table-label">All Fights</h2>
+    <table class="fight-details-table">
+        <thead>
+            <tr>
+                <th>Fighter 1</th>
+                <th>Fighter 2</th>
+                <th>Winner</th>
+                <th>Method</th>
+                <th>Round</th>
+                <th>Weight Class</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fight in fights %}
+            <tr>
+                <td>{{ fight[3] }}</td>
+                <td>{{ fight[4] }}</td>
+                <td>{{ fight[2] }}</td>
+                <td>{{ fight[10] }}</td>
+                <td>{{ fight[11]}}</td>
+                <td>{{ fight[9] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

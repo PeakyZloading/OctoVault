@@ -20,6 +20,39 @@ def overview():
     conn = sqlite3.connect(db_file_path)
     cursor = conn.cursor()
 
+    if is_event_name(fighter_name):
+        event_name = fighter_name.lower()
+        if "vs" in event_name and "vs." not in event_name:
+            event_name = event_name.replace("vs", "vs.")
+        
+        event_name_query = "SELECT DISTINCT eventname, eventdate FROM fights WHERE LOWER(eventname) LIKE ?"
+        search_pattern = f"%{event_name}%"
+        cursor.execute(event_name_query, (search_pattern,))
+        results = cursor.fetchall()
+        if results:
+            event_name = results[0][0]
+            event_date = results[0][1]
+            fights_query = "SELECT * FROM fights WHERE eventname = ?"
+            cursor.execute(fights_query, (event_name,))
+            fights = cursor.fetchall()
+
+            #Create dictionary for rendering fight and event data
+            event_data = {
+                "event_name": event_name,
+                "event_date": event_date,
+                "fights": fights
+            }
+
+            return render_template("eventOverview.html", **event_data)
+        else:
+            event_data = {
+                "event_name": 'Event not Found',
+                "fights": []
+            }
+            return render_template("eventOverview.html", **event_data)
+
+
+
     #Query to retrive basic fighter info from the database
     fighter_info_query = "SELECT * FROM fighters WHERE LOWER(first_name) = ? AND LOWER(last_name) = ?"
     first_name, last_name = fighter_name.split()
@@ -36,9 +69,7 @@ def overview():
     cursor.execute(fights_query, fights_params)
     fighter_fights = cursor.fetchall()
 
-    #Test and view structure of fight tuples
-    #print(fighter_fights)
-
+    #Closes connection to db
     cursor.close()
     conn.close()
 
@@ -67,3 +98,11 @@ def overview():
         }
 
     return render_template("overview.html", **fighter_data)
+
+
+def is_event_name(input):
+    if "ufc" in input.lower():
+        return input
+    elif "vs" in input.lower():
+        return input
+    return False
